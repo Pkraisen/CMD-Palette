@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.page-title {
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.page-title kbd {
+  background-color: rgba(81, 80, 80, 0.614);
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: monospace;
+  padding: 2px 6px;
+  border: 1px solid grey;
+}
+
+body.overlay-open .page-title {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  padding: 10vh 55vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.363);
+
+  /* Smooth animation setup */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.palette {
+  width: 600px;
+  background-color: rgb(44, 43, 43);
+  padding: 5px;
+  border-radius: 50px;
+  border: 1px solid rgb(29, 29, 29);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+
+  /* Optional: smooth entrance effect */
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.overlay.open .palette {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.input {
+  width: 100%;
+  font-size: 20px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(44, 43, 43);
+  outline: none;
+}
